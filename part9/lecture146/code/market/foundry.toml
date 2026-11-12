@@ -1,0 +1,38 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+solc = "0.8.30"
+# 第124講: 同じバイトコードを作り直せるようにビルド設定を書いておく(Foundryのデフォルトと同じ値、バイトコードはそのまま)
+# 第140講: optimizerをオフからオンに変える(runs 200はそのまま)。テスト60個、二つのビルドで同じ答え、ガス・サイズを比較してから変更
+optimizer = true
+optimizer_runs = 200
+# 第145講: via-IRをオフからオンに変える(optimizerオン・runs 200はそのまま)。同じ呼び出し300回で二つのビルドの答えが同じ、テスト65個、デプロイのガスと測った呼び出し七つのうち六つが減る
+via_ir = true
+evm_version = "osaka"
+# 第129講: メタデータに入るremappingを自動検出に任せず書いておく(lib/forge-stdがなくても同じバイトコード)
+remappings = ["forge-std/=lib/forge-std/src/"]
+# 第142講: メタデータのハッシュを末尾に付ける設定を書いておく(Foundryのデフォルトと同じ値、バイトコードはそのまま)
+bytecode_hash = "ipfs"
+cbor_metadata = true
+# 第145講: テストが残すガスの記録(snapshots/)を前回の記録と照合。違えばforge testが失敗、記録ファイルはそのまま
+gas_snapshot_check = true
+
+# 第145講: 第134講の[profile.ir]を変える。defaultがvia-IRになったので、比較用にデフォルトの経路(optimizerオン)の版を置く(FOUNDRY_PROFILE=legacy)。ガスの記録は残しも照合もしない
+[profile.legacy]
+via_ir = false
+out = "out-legacy"
+gas_snapshot_check = false
+gas_snapshot_emit = false
+
+# 第140講: 巻き戻りの行を探すときに回し直す版(FOUNDRY_PROFILE=debug)。optimizerオフ、デプロイしない
+# 第145講: defaultがvia-IRになったのでvia_ir = falseを書く。ガスの記録は残しも照合もしない
+[profile.debug]
+optimizer = false
+via_ir = false
+out = "out-debug"
+gas_snapshot_check = false
+gas_snapshot_emit = false
+
+[lint]
+lint_on_build = false

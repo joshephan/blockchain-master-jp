@@ -1,0 +1,7 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = []
+solc = "0.8.30"
+[lint]
+lint_on_build = false

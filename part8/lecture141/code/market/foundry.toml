@@ -1,0 +1,26 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+solc = "0.8.30"
+# 第124講: 同じバイトコードを作り直せるようにビルド設定を書いておく(Foundryのデフォルトと同じ値、バイトコードはそのまま)
+# 第140講: optimizerをオフからオンに変える(runs 200はそのまま)。テスト60個、二つのビルドで同じ答え、ガス・サイズを比較してから変更
+optimizer = true
+optimizer_runs = 200
+via_ir = false
+evm_version = "osaka"
+# 第129講: メタデータに入るremappingを自動検出に任せず書いておく(lib/forge-stdがなくても同じバイトコード)
+remappings = ["forge-std/=lib/forge-std/src/"]
+
+# 第134講: via-IRに切り替えるときに確認する版(FOUNDRY_PROFILE=ir)。デプロイ物は上のdefault(via-IRオフ)のまま
+[profile.ir]
+via_ir = true
+out = "out-ir"
+
+# 第140講: 巻き戻りの行を探すときに回し直す版(FOUNDRY_PROFILE=debug)。optimizerオフ、デプロイしない
+[profile.debug]
+optimizer = false
+out = "out-debug"
+
+[lint]
+lint_on_build = false

@@ -1,0 +1,29 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+solc = "0.8.30"
+optimizer = false
+optimizer_runs = 200
+evm_version = "osaka"
+remappings = ["forge-std/=lib/forge-std/src/"]
+
+[profile.opt]
+optimizer = true
+out = "out-opt"
+
+[lint]
+lint_on_build = false
+
+[profile.nodedup]
+optimizer = true
+out = "out-nodedup"
+
+[profile.nodedup.optimizer_details]
+deduplicate = false
+
+[profile.noloop]
+out = "out-noloop"
+
+[profile.noloop.optimizer_details]
+simpleCounterForLoopUncheckedIncrement = false

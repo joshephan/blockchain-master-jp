@@ -1,0 +1,1 @@
+{"language":"Solidity","sources":{"WrongType.sol":{"content":"// SPDX-License-Identifier: MIT\npragma solidity 0.8.30;\n\ncontract WrongType {\n    uint256 public count;\n\n    function reset() public {\n        count = \"zero\";\n    }\n}\n"}},"settings":{"outputSelection":{"*":{"*":["abi"]}}}}

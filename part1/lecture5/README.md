@@ -52,9 +52,9 @@ Node.js `crypto`の`sha3-256`で同じ"hello"をハッシュした出力（`node
 | ビットコインスクリプトの署名チェック | [第9講](../../part1/lecture9/) |
 | トランザクションの一生とナンスの詳細 | [第11講](../../part1/lecture11/) |
 | アカウントモデルとEOA | [第12講](../../part1/lecture12/) |
-| Solidityのkeccak256、sha256、ecrecover | 第79講 |
-| オンチェーン乱数 | 第175講 |
-| 鍵の管理とマルチシグ | 第178講 |
-| 署名のリプレイとアカウント抽象化の署名設計 | 第218講〜第223講 |
+| Solidityのkeccak256、sha256、ecrecover | [第79講](../../part5/lecture79/) |
+| オンチェーン乱数 | [第175講](../../part11/lecture175/) |
+| 鍵の管理とマルチシグ | [第178講](../../part11/lecture178/) |
+| 署名のリプレイとアカウント抽象化の署名設計 | [第218講](../../part15/lecture218/)〜[第223講](../../part15/lecture223/) |
 
 出典と参考資料は[reference.md](reference.md)にまとめた。

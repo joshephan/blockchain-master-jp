@@ -1,0 +1,1 @@
+{"language":"Solidity","sources":{"Typo.sol":{"content":"// SPDX-License-Identifier: MIT\npragma solidity 0.8.30;\n\ncontract Typo {\n    uint256 public count;\n\n    function increment() public {\n        count += 1\n    }\n}\n"}},"settings":{"outputSelection":{"*":{"*":["abi"]}}}}

@@ -1,0 +1,8 @@
+[profile.default]
+solc = "0.8.30"
+
+[fmt]
+int_types = "preserve"
+pow_no_space = true
+single_line_statement_blocks = "single"
+contract_new_lines = true

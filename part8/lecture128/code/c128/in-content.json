@@ -1,0 +1,18 @@
+{
+ "language": "Solidity",
+ "sources": {
+  "Store.sol": {
+   "content": "// SPDX-License-Identifier: GPL-3.0\npragma solidity 0.8.30;\n\ncontract Store {\n    uint256 public v = 7;\n\n    function get() external view returns (uint256) {\n        return v;\n    }\n\n    function set(uint256 x) external {\n        v = x;\n    }\n}\n"
+  }
+ },
+ "settings": {
+  "outputSelection": {
+   "*": {
+    "*": [
+     "evm.bytecode.object",
+     "metadata"
+    ]
+   }
+  }
+ }
+}

@@ -1,0 +1,5 @@
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity 0.8.30;
+library L {
+    function f(uint256 a) public pure returns (uint256) { return a + 1; }
+}

@@ -1,0 +1,22 @@
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity 0.8.30;
+
+contract MarkStorage {
+    struct Voter {
+        uint weight;
+        bool voted;
+        address delegate;
+        uint vote;
+    }
+
+    mapping(address => Voter) public voters;
+
+    function giveRight(address who) external {
+        voters[who].weight = 1;
+    }
+
+    function markVoted() external {
+        Voter storage v = voters[msg.sender];
+        v.voted = true;
+    }
+}

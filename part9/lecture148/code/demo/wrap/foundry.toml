@@ -1,0 +1,5 @@
+[profile.default]
+solc = "0.8.30"
+
+[fmt]
+wrap_comments = true

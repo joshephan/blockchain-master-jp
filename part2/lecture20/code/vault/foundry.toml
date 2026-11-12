@@ -1,0 +1,6 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = []
+offline = true
+solc = "0.8.30"

@@ -1,0 +1,30 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+# コンパイラ・ビルドの設定。選んだ理由はdesign/architecture.mdの決定記録D-01・D-02
+solc = "0.8.30"
+optimizer = true
+optimizer_runs = 200
+via_ir = true
+evm_version = "osaka"
+remappings = ["forge-std/=lib/forge-std/src/", "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/"]
+# libが二つになったのでremappingの自動検出を切る。メタデータには上の二行だけが入る
+auto_detect_remappings = false
+bytecode_hash = "ipfs"
+cbor_metadata = true
+
+# リバートした行を探すときに回し直す版(FOUNDRY_PROFILE=debug)。optimizerは切る、デプロイしない
+[profile.debug]
+optimizer = false
+via_ir = false
+out = "out-debug"
+
+[fmt]
+line_length = 120
+tab_width = 4
+style = "space"
+quote_style = "double"
+
+[lint]
+lint_on_build = false

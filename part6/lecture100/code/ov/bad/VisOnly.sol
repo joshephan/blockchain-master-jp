@@ -1,0 +1,12 @@
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity 0.8.30;
+
+contract VisOnly {
+    function f(uint256 a) external pure returns (uint256) {
+        return a;
+    }
+
+    function f(uint256 a) public pure returns (uint256) {
+        return a + 1;
+    }
+}

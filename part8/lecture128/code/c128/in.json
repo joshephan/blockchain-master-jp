@@ -1,0 +1,1 @@
+{"language":"Solidity","sources":{"Store.sol":{"urls":["Store.sol"]}},"settings":{"outputSelection":{"*":{"*":["evm.bytecode.object","metadata"]}}}}

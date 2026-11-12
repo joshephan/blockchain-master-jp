@@ -1,0 +1,43 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+# コンパイラ・ビルドの設定。選んだ理由はdesign/architecture.mdの決定記録D-01・D-02
+solc = "0.8.30"
+optimizer = true
+optimizer_runs = 200
+via_ir = true
+evm_version = "osaka"
+remappings = ["forge-std/=lib/forge-std/src/", "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/"]
+# libが二つになったのでremappingの自動検出を切る。メタデータには上の二行だけが入る
+auto_detect_remappings = false
+bytecode_hash = "ipfs"
+cbor_metadata = true
+# ドキュメントのテスト(DocsTest)が成果物のJSONを読む
+fs_permissions = [{ access = "read", path = "./out" }, { access = "read", path = "./out-debug" }]
+
+# リバートした行を探すときに回し直す版(FOUNDRY_PROFILE=debug)。optimizerは切る、デプロイしない
+[profile.debug]
+optimizer = false
+via_ir = false
+out = "out-debug"
+
+# ファズ・不変条件のテスト。seedを書いておき、同じ入力・同じ順番で回し直す(.gas-snapshotの行もそのまま)
+[fuzz]
+runs = 256
+seed = "0x103"
+
+[invariant]
+runs = 128
+depth = 200
+fail_on_revert = false
+show_metrics = true
+
+[fmt]
+line_length = 120
+tab_width = 4
+style = "space"
+quote_style = "double"
+
+[lint]
+lint_on_build = false
